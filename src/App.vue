@@ -1,9 +1,14 @@
 <script>
 
 import axios from 'axios';
+import CardProject from './components/CardProject.vue';
+
 
 export default{
   name: 'App',
+  components: {
+   CardProject
+  },
 
   data(){
     return {
@@ -35,16 +40,8 @@ export default{
 <div>
     <h1>Progetti</h1>
 
-    <div v-for="project in projects.data" >
-      <h2>{{ project.name }}</h2>
-      <p>{{ project.description }}</p>
-      <li v-for="technology in project.technologies" :key="technology.id">
-            {{ technology.name }}
-      </li>
-      <li>
-            {{ project.type.nome }}
-      </li>
-    </div>
+    <CardProject v-for="project in projects.data" :project="project"/>
+
   </div>
     
 </template>
