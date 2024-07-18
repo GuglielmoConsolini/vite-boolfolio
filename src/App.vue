@@ -18,9 +18,12 @@ export default{
     axios
      .get('http://localhost:8000/api/projects')
      .then(response => {
-       console.log(responde);
+       console.log(response);
        this.projects = response.data.projects
      })
+     
+
+     console.log(this.projects)
   }
 }
 
@@ -28,21 +31,24 @@ export default{
 </script>
 
 <template>
-  <h1>Ciao</h1>
+
+<div>
+    <h1>Progetti</h1>
+
+    <div v-for="project in projects.data" >
+      <h2>{{ project.name }}</h2>
+      <p>{{ project.description }}</p>
+      <li v-for="technology in project.technologies" :key="technology.id">
+            {{ technology.name }}
+      </li>
+      <li>
+            {{ project.type.nome }}
+      </li>
+    </div>
+  </div>
     
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
