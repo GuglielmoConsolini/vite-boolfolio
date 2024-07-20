@@ -12,6 +12,7 @@ export default{
 
   data(){
     return {
+      base_url: 'http://127.0.0.1:8000',
       projects: ''
     }
   },
@@ -21,7 +22,7 @@ export default{
   mounted(){
 
     axios
-     .get('http://localhost:8000/api/projects')
+     .get(`${this.base_url}/api/projects`)
      .then(response => {
        console.log(response);
        this.projects = response.data.projects
