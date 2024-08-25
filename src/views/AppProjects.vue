@@ -1,6 +1,6 @@
 <script>
   import axios from 'axios';  
-  import CardProject from '../components/CardProject.vue'
+  import CardProject from './CardProject.vue'
   
   export default {
     name: 'AppProjects',
@@ -32,20 +32,43 @@
 </script>
 
 <template>
-    <div>
-      <h1>Progetti</h1>
-      <div v-if="projects.length">
-        <CardProject v-for="project in projects" :key="project.id" :project="project" />
-      </div>
-      <div v-else>
-        <p>No projects available</p>
-      </div>
+  <div class="projects-container">
+    <h1>Progetti</h1>
+    <div v-if="projects.length" class="projects-flex">
+      <CardProject 
+        v-for="project in projects" 
+        :key="project.id" 
+        :project="project"
+      />
     </div>
+    <div v-else>
+      <p>No projects available</p>
+    </div>
+  </div>
 </template>
-  
-  
-  
-  <style scoped>
-  
-  </style>
+
+<style scoped>
+.projects-container {
+  margin: 0 auto; 
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.projects-flex {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+}
+
+.projects-flex > * {
+  flex: 0 0 calc(50% - 10px); 
+  margin-bottom: 20px; 
+}
+
+.projects-flex > *:nth-child(odd) {
+  margin-right: 10px; 
+}
+
+</style>
+
   
