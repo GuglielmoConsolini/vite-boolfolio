@@ -1,5 +1,15 @@
-# Vue 3 + Vite
+# Boolfolio Frontend - Visualizzazione Progetti Personali
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Boolfolio Frontend è un'applicazione sviluppata con Vue.js che consente agli utenti di visualizzare i progetti personali gestiti attraverso il backend Laravel. Ogni progetto include dettagli come titolo, descrizione, immagine e tecnologie utilizzate.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Caratteristiche principali
+
+Elenco dei progetti: Mostra tutti i progetti disponibili nel database.
+Filtri per tecnologie: (Opzionale) Gli utenti possono filtrare i progetti in base alle tecnologie utilizzate.
+Dettagli del progetto: Visualizza informazioni dettagliate su ogni singolo progetto.
+Interfaccia responsiva: Il design dell'applicazione è ottimizzato per tutti i dispositivi.
+
+## Tecnologie utilizzate
+Framework: Vue.js 
+Router: Vue Router
+UI: Bootstrap 
